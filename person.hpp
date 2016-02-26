@@ -7,6 +7,7 @@ class person
 	char* numero;
 	int nivel;
 public:
+	person();
 	person(char *arrayNom ,char *arrayNum); /*constructor*/
 	void setNombre(char *arrayNombre);
 	void setNumero(char *arrayNumero);

@@ -4,22 +4,28 @@
 
 using namespace std;
 
-person::person(char* nombre , char* numero)
+person::person()
 {
-	nombre = new char[25];
-	numero = new char[10];
-	//strcpy(this->nombre, nombre);
-	//strcpy(this->numero, numero);
-	this -> nombre = nombre;
-	this -> numero = numero;	
+	nombre= new char[25];
+	numero= new char[10];
+//	this -> nombre = nombre;
+//	this -> numero = numero;	
 }
-void person::setNombre(char *arrayNombre)
-{
-	this -> nombre = arrayNombre;
+person::person(char* nombre , char* numero){
+	setNumero(numero);
+	setNombre(nombre);
 }
-void person::setNumero(char *arrayNumero)
+void person::setNombre(char* nombre)
 {
-	this -> numero = arrayNumero;
+	 this->nombre=new char[25];
+	 strcpy(this->nombre, nombre);
+
+}
+void person::setNumero(char* numero)
+{
+	this->numero=new char[10];
+	 strcpy(this->numero, numero);
+
 }
 char* person::getNombre()
 {
