@@ -70,14 +70,23 @@ int main(int argc, char const *argv[])
 				}else{
 					noecho();
 				}
-				nombre[contador+1]='\0';
+			
 			}
+			nombre[contador]='\0';
       			mvprintw(++y,x,"ingrese su numero : ");
 			//getstr(numero);
 			while((letra=getch())!= '\n'){
 				echo();
-				numero[contador2]=letra;
-				contador2++;
+				if(letra>=48 && letra<=57){	
+					numero[contador2]=letra;
+					contador2++;
+				}else{
+					noecho();
+				}
+				if(contador2==4){
+					numero[contador2+1]='-';
+					contador2++;
+				}
 			}
 			numero[contador2+1]='\0';
 			person persona(nombre,numero);
